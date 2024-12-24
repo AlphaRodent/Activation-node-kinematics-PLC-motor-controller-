@@ -1,0 +1,907 @@
+
+
+
+
+
+Micro820
+ 
+Table of Contents
+
+
+ 
+Micro820
+Device Configuration
+Controller
+Overview
+ 
+General
+Name	Description	Vendor Name	Catalog ID	Product Lifecycle	Controller Project Version	Download Source Code
+Micro820	Tronox BSB PCPW B Thickener	Allen-Bradley	2080-LC20-20QBB	Active	12	Yes
+Plug-in Modules
+Physical Slot	Catalog ID	When module is not present
+1	2080-OF2	Do not fault controller (optional module)
+Memory
+ 
+Name	Allocated	Used	Free
+Embedded Project	348,160 bytes	54,311 bytes	293,849 bytes
+Temporary Variables	8,412 bytes	220 bytes	8,192 bytes
+Retentive Memory (bytes)	400 bytes	32 bytes	368 bytes
+Retentive Memory (blocks)	400 blocks	8 blocks	392 blocks
+Startup/Faults
+Mode Behavior	Fault Override	Memory Card	Hard Fault
+Remote run mode	Clear Fault	Memory Card	Restart controller automatically
+Serial Port
+Common Settings
+Driver	Baud Rate	Parity	Station Address
+CIP Serial	38400	None	4
+Protocol Control
+DF1 Mode	Media	Control Line	Error Detection
+Full Duplex	RS232	No Handshake	CRC
+
+Embedded Responses	Duplicate Packet Detection	ACK Timeout	NAK Retries
+After One Received	Enabled	50	3
+
+ENQ Retries
+3
+
+Ethernet
+Port Settings
+Port State: Enabled
+Auto-Negotiate Speed and Duplex Mode: Enabled
+
+Internet Protocol (IP) Settings
+Startup Configuration	IP Address	Subnet Mask	Gateway Address	Detect duplicate IP address
+Static	192.168.10.10	255.255.255.0	0.0.0.0	Enabled
+
+EtherNet/IP
+Inactivity Timeout: 120 sec
+Modbus TCP
+Modbus TCP Server state: Enabled
+Real Time Clock
+Allow real time clock to be changed in run mode: Disabled
+Embedded I/O
+Input Filter
+Inputs	0-1	2-3	4-5	6-7	8-9	10-11
+Input Filter	Default (DC 8ms)	Default (DC 8ms)	Default (AC 8ms)	Default (AC 8ms)	Default (AC 8ms)	Default (AC 8ms)
+
+Gain & Offset
+Input	0	1	2	3
+Gain	100	100	100	100
+Offset	0	0	0	0
+
+Output	0
+Gain	100
+Offset	0
+
+Memory Card
+Memory Card Settings
+Load on power up	Include Project & Logical values upon Backup/Restore
+Disabled	False
+Plug-in Modules
+2080-OF2
+General
+Catalog ID	Vendor Name	Description	Product Type	Slot	Revision
+2080-OF2
+Allen-Bradley	2-channel, Non-isolated unipolar voltage/current analog output	Analog plug-in	1	1
+Output
+Label	Variable Name
+Output 0	IO_P1_AO_00
+Output 1	IO_P1_AO_01
+Configuration
+Channel	Output Type	Output State
+0	Current	Enabled
+1	Current	Enabled
+Global Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+_IO_EM_DO_00	SCADA_Feedback	BOOL					VarDirectlyRepresented	False	
+_IO_EM_DO_01	FLUSH	BOOL				Water flush	VarDirectlyRepresented	False	
+_IO_EM_DO_02	PURGE	BOOL				Air Purge	VarDirectlyRepresented	False	
+_IO_EM_DO_03	SAMPLE	BOOL				Vacuum Sample Slurry	VarDirectlyRepresented	False	
+_IO_EM_DO_04	PINCH	BOOL				0 = Pinch open; 1 =Pinch closed	VarDirectlyRepresented	False	
+_IO_EM_DO_05		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DO_06		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_00		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_01		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_02		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_03		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_04	AUTO	BOOL				START THE SEQUENCER	VarDirectlyRepresented	False	
+_IO_EM_DI_05		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_06	L_LEVEL	BOOL				Liquid level relay high level	VarDirectlyRepresented	False	
+_IO_EM_DI_07	IR_DETECT	BOOL				IR/Lasar barier 1= clear,0= slurry	VarDirectlyRepresented	False	
+_IO_EM_DI_08		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_09		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_10		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_DI_11		BOOL				N/U	VarDirectlyRepresented	False	
+_IO_EM_AI_00		WORD				N/U	VarDirectlyRepresented	False	
+_IO_EM_AI_01		WORD				N/U	VarDirectlyRepresented	False	
+_IO_EM_AI_02		WORD				N/U	VarDirectlyRepresented	False	
+_IO_EM_AI_03		WORD				N/U	VarDirectlyRepresented	False	
+_IO_EM_AO_00		WORD				N/U	VarDirectlyRepresented	False	
+VSD_Start_Constant	VSD_STR_Cont	REAL		60.0			Var	False	
+SEQ	SEQUENCER1	INT					Var	False	
+Timer_Reset	T_Reset	BOOL		FALSE			Var	False	
+VSD	VSD_1	REAL		55.0			Var	False	
+Eval_Time_Fail	EVAL_T_Fail	TIME		T#5s			Var	False	
+Eval_Time_OK	EVAL_T_OK	TIME		T#2s			Var	False	
+Calculation_Time	Calc_T	TIME		T#2s		Only for viewing calc	Var	False	
+Set_T	Set_Timer	TIME		T#0s		Actual Settling Time (RTO6_ET)	Var	False	
+SCALE_MIN	SCL_Min	REAL		0.000		MINIMUM SCALING FROM 0	Var	False	
+SCALE_MAX	SCL_MAX	REAL		100.000		MAXIMUM SCALE 100%	Var	False	
+Out_Maxima	Out_Max	REAL		65535.0			Var	False	
+Seq_Pulse	Pulse	BOOL		FALSE			Var	False	
+terminal_pulse	TPT_1	TIME		T#5s			Var	False	
+VSD_MIN	VSD_M	REAL		30.0			Var	False	
+Sett_T_Const_REAL	Set_T_C_R	REAL				Settling Constant in REAL	Var	False	
+Set_T_REAL	S_T_R	REAL					Var	False	
+e	Eulers_Number	REAL		2.718281828459045			Var	False	
+Correction	Corr	REAL		0.00000			Var	False	
+Initial_Time	Init_T	TIME		T#2s			Var	False	
+Calc_Trig1	Trig1	BOOL		FALSE			Var	False	
+Prev_DEV	previous_DEV	REAL		0.00000		DEVIATION OF THE PREVIOUS CYCLE	Var	False	
+ACCELERATION		REAL		0.00000			Var	False	
+RUN	Auto_RUN	BOOL					Var	False	
+ROC_Prev	previous rate of change	REAL		0.00000			Var	False	
+SUM	sum of activation exponent	REAL		0.00000			Var	False	
+SEQ_END	SEQ_en	TIME		T#2s			Var	False	
+RINSE_TIME	Rinse_t	TIME		T#5s			Var	False	
+INPUT_HYSTERISIS_TIME	hyst_time	TIME		T#1s			Var	False	
+MAX_SAMPLING_TIME	M_Samp_T	TIME		T#60s			Var	False	
+BIAS	RAMP_DOWN_BIAS	REAL		0.6000			Var	False	
+VSD_WEIGHT	proportional vsd change	REAL		4.00000			Var	False	
+INSEQ_DELAY	In_Seq_del	TIME		T#10s			Var	False	
+PURGE_TIME	Purge_T	TIME		T#5s			Var	False	
+START_DELAY	Str_dlay	TIME		T#5s			Var	False	
+COR_TIME	Cor_T	TIME		T#5s			Var	False	
+VSD_Output	VSD_Out	REAL					Var	False	
+Input_Delay	I_Delay	TIME		T#0s			Var	False	
+TANH_SUM	Tanh(SUM)	REAL		0.000000			Var	False	
+SECH_SUM	Sech(SUM)	REAL		0.000000			Var	False	
+SECOND_DERIV_TANH	2ND_DERIV_TANH	REAL		0.000000			Var	False	
+DRIFT_BIAS	BIAS_2	REAL		0.150		Correct steady state error	Var	False	
+SIGNAL_LOSS_TIME_OUT		TIME		T#2s		Signal loss delay	Var	False	
+DEV	Deviation	REAL		0.0000		Deviation from the setpoint	Var	False	
+Set_T_Const_TIME	SET_T_C_T	TIME		T#43s		Settling Time Constant in Seconds	Var	False	
+Max_Set_Time	M_Set_T	TIME		T#62s		Max allowed settling time	Var	False	
+ROC	Rate of change	REAL		0.000000			Var	False	
+FAILSAFE_VSD_VALUE	FS_VSD_V	REAL		50.0		Fail safe value VSD	Var	False	
+VSD_MAX	VSD_Mx	REAL		100.0		Maximum VSD output in %	Var	False	
+PROP_WEIGHT	Deviation weight	REAL		3.000			Var	False	
+STEP87_INTERLOCK		BOOL		FALSE			Var	False	
+SPEED_WEIGHT		REAL		0.667			Var	False	
+ACCELERATION_WEIGHT	acc_weight	REAL		0.0667			Var	False	
+_IO_P1_AO_00		UINT					VarDirectlyRepresented	False	
+_IO_P1_AO_01		UINT					VarDirectlyRepresented	False	
+CYCLES_MEDIAN		DINT		0		MEDIAN CYCLE INTIGER	Var	False	
+HMI_RINSE		BOOL		FALSE			Var	False	
+HMI_PURGE		BOOL		FALSE			Var	False	
+HMI_VACUUM		BOOL		FALSE			Var	False	
+HMI_PINCH		BOOL		FALSE			Var	False	
+MAINT		BOOL		FALSE			Var	False	
+ABORT_TIMER		TIME		T#10s			Var	False	
+FORCED_RUN		BOOL		FALSE			Var	False	
+START_COUNT		TIME		T#0s			Var	False	
+STOP_COUNT		TIME		T#0s			Var	False	
+LEVEL_FAIL		BOOL					Var	False	
+LASER_FAIL		BOOL					Var	False	
+ABORT_BOOL		BOOL					Var	False	
+LEVEL_LOSS		BOOL					Var	False	
+SAMPLE_FAIL		BOOL					Var	False	
+HMI_STATUS_INT		INT		-10			Var	False	
+VSD_ABORT_TRESHOLD		REAL		50.0			Var	False	
+LEVEL_LOSS_TIMER		TIME		T#15s			Var	False	
+FLUSH_COUNT		DINT		0			Var	False	
+PURGE_COUNT		DINT		0			Var	False	
+SAMPLE_COUNT		DINT		0			Var	False	
+PINCH_COUNT		DINT		0			Var	False	
+FLUSH_TIME_DINT		DINT		0			Var	False	
+RESET_VALVE1_CYCLE_COUNT		BOOL		FALSE			Var	False	
+MAX_COUNT_DINT		DINT		999999			Var	False	
+RESET_VALVE2_CYCLE_COUNT		BOOL		FALSE			Var	False	
+RESET_VALVE3_CYCLE_COUNT		BOOL		FALSE			Var	False	
+RESET_VALVE4_CYCLE_COUNT		BOOL		FALSE			Var	False	
+RESET_ALL_CTU		BOOL		FALSE			Var	False	
+PURGE_TIME_DINT		DINT		0			Var	False	
+SAMPLE_TIME_DINT		DINT		0			Var	False	
+PINCH_TIME_DINT		DINT		0			Var	False	
+SONAR_BLOCK_BOOL		BOOL		FALSE		INHIBIT SONAR PROBE FAULT	Var	False	
+OVERDOSE_ABORT_BOOL		BOOL		FALSE			Var	False	
+LEVEL_LOSS_BOOL		BOOL		FALSE			Var	False	
+BIAS_OPERATOR_REAL		REAL					Var	False	
+__SYSVA_CYCLECNT		DINT				Cycle counter	VarGlobal	False	
+__SYSVA_CYCLEDATE		TIME				Timestamp of the beginning of the cycle in milliseconds (ms)	VarGlobal	False	
+__SYSVA_KVBPERR		BOOL				Kernel variable binding producing error (production error)	VarGlobal	False	
+__SYSVA_KVBCERR		BOOL				Kernel variable binding consuming error (consumption error)	VarGlobal	False	
+__SYSVA_RESNAME		STRING				Resource name (max length=255)	VarGlobal	False	
+__SYSVA_SCANCNT		DINT				Input scan counter	VarGlobal	False	
+__SYSVA_TCYCYCTIME		TIME				Programmed cycle time	VarGlobal	False	
+__SYSVA_TCYCURRENT		TIME				Current cycle time	VarGlobal	False	
+__SYSVA_TCYMAXIMUM		TIME				Maximum cycle time since last start	VarGlobal	False	
+__SYSVA_TCYOVERFLOW		DINT				Number of cycle overflows	VarGlobal	False	
+__SYSVA_RESMODE		SINT				Resource execution mode	VarGlobal	False	
+__SYSVA_CCEXEC		BOOL				Execute one cycle when application is in cycle to cycle mode	VarGlobal	False	
+__SYSVA_REMOTE		BOOL		FALSE		Remote status	VarGlobal	False	
+__SYSVA_SUSPEND_ID		UINT		0		Last Suspend ID	VarGlobal	False	
+__SYSVA_TCYWDG		UDINT		2000		Software Watchdog	VarGlobal	False	
+__SYSVA_MAJ_ERR_HALT		BOOL		FALSE		Major Error Halted status	VarGlobal	False	
+__SYSVA_ABORT_CYCLE		BOOL		FALSE		Aborting Cycle	VarGlobal	False	
+__SYSVA_FIRST_SCAN		BOOL		TRUE		First scan bit	VarGlobal	False	
+__SYSVA_USER_DATA_LOST		BOOL		FALSE		User data lost	VarGlobal	False	
+__SYSVA_POWERUP_BIT		BOOL		TRUE		Power-up bit	VarGlobal	False	
+__SYSVA_PROJ_INCOMPLETE		UDINT		0		Project Incomplete	VarGlobal	False	
+
+Programs
+SEQUENCER
+Local Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+TON_5		TON		...	...		Var	False	
+TON_2		TON		...	...		Var	False	
+TON_3		TON		...	...		Var	False	
+TON_4		TON		...	...		Var	False	
+RTO_1		RTO		...	...		Var	False	
+RTO_2		RTO		...	...		Var	False	
+RTO_3		RTO		...	...		Var	False	
+RTO_4		RTO		...	...		Var	False	
+TON_6		TON		...	...		Var	False	
+TON_7		TON		...	...		Var	False	
+TP_1		TP		...	...		Var	False	
+RTO_5		RTO		...	...		Var	False	
+RTO_6		RTO		...	...		Var	False	
+RTO_7		RTO		...	...		Var	False	
+RTO_8		RTO		...	...		Var	False	
+REINITIALIZE_VSD_PULSE_TIMER		TP		...	...		Var	False	
+TON_8		TON		...	...		Var	False	
+TON_9		TON		...	...		Var	False	
+RTO_9		RTO		...	...		Var	False	
+RTO_10		RTO		...	...		Var	False	
+TON_1		TON		...	...		Var	False	
+TONOFF_START_STOP		TONOFF		...	...		Var	False	
+
+Programs
+//START FLOCC DOSE CONTROLLER WHEN FORCED_RUN OR DI_04 IS TRUE(MUTUALLY INCLUESIVE) AND NOT(MAINT OR DI_05)(MUTUALLY EXCLUSIVE)
+
+TONOFF_START_STOP((FORCED_RUN OR _IO_EM_DI_04 ) AND NOT (MAINT OR _IO_EM_DI_05),T#7s,T#2s);
+
+//COUNT UP TIMERS TO HMI TO DISPLAY STARTUP AND STOP DELAY 
+START_COUNT := TONOFF_START_STOP.ET;
+STOP_COUNT :=  TONOFF_START_STOP.ET;
+// END CTU TO HMI
+
+
+// WRITE SEQ TO STEP 10 
+IF TONOFF_START_STOP.Q THEN
+SEQ :=10;
+END_IF ;
+
+//BOOL FEEDBACK TO TRONOX SCADA NOT CONNECTED :INDICATOR LAMP ON THE PLC LED
+_IO_EM_DO_00 := TONOFF_START_STOP.Q ;
+RUN := TONOFF_START_STOP.Q ;
+
+//INITIALIZE VSD START VALUES UNIT IS RESTARTED WHILE MACHINE IS ON
+REINITIALIZE_VSD_PULSE_TIMER(RUN, Initial_Time) ;
+IF REINITIALIZE_VSD_PULSE_TIMER.Q THEN
+   VSD_Output := VSD_Start_Constant ;
+   VSD :=VSD_Start_Constant;
+//RESET SEQUENCER PULSE   
+   Seq_Pulse := FALSE ;
+//RESET ALL RTO TIMERS   
+   TIMER_RESET := TRUE ;
+   
+   
+END_IF ;
+
+//INITIALIZATION DELAY
+TON_2(RUN AND SEQ = 10, START_DELAY) ;
+      IF TON_2.Q THEN
+         SEQ :=20;
+      END_IF;
+
+//STEP 20 FLUSH SAMPLER VESSEL
+  TON_3(RUN AND SEQ =20 AND RUN, RINSE_TIME) ;
+
+IF TON_3.Q THEN
+SEQ :=25;
+END_IF;
+
+// END SEQUENCE INITIALIZATION////////
+
+// START NORMAL SEQUENCE 
+
+//STEP 25 DELAY START NORMAL SEQUENCE START
+
+TON_1(RUN AND SEQ = 25 AND NOT Seq_Pulse ,START_DELAY);
+  IF TON_1.Q THEN
+  
+  SEQ := 30;
+  END_IF;
+//END HMI MULTISTAGE INDICATOR  
+  
+
+
+//STEP 30 PURGE (OPEN AIRPURGE VALVE TO CLEAR SLURRY FROM SAMPLER LINE
+TON_4(RUN AND SEQ = 30 , PURGE_TIME);
+IF TON_4.Q THEN
+SEQ :=40;
+END_IF ;
+
+//STEP 40 IN-SEQUENCE DELAY
+TON_5(RUN AND SEQ = 40, INSEQ_DELAY) ;
+IF TON_5.Q THEN
+SEQ := 50;
+END_IF ;
+
+// END_IN-SEQUENCE_DELAY
+
+
+//START STEP 50.......................................................................
+
+//STEP 50 EVALUATION: PASS _IO_EM_DI_06 = FALSE AND _IO_EM_DI_07 = TRUE AND GATE OPEN
+RTO_1(SEQ = 50 AND NOT(RTO_2.Q) AND (NOT SONAR_BLOCK_BOOL OR _IO_EM_DI_07) AND NOT(_IO_EM_DI_06) , TIMER_RESET, EVAL_TIME_OK) ;
+IF RTO_1.Q THEN
+SEQ :=60;
+END_IF ;
+
+//STEP 50 EVALUATION: FAIL _IO_EM_DI_06 = TRUE OR _IO_EM_DI_07 = FALSE 
+RTO_2(SEQ = 50 AND NOT RTO_1.Q, TIMER_RESET, EVAL_TIME_FAIL) ;
+IF( RTO_2.Q OR NOT RUN ) THEN
+SEQ := 86;
+
+//FEEDBACK FAIL CONDITIONS TO HMI/ LASER CONDITIONS ARE INVERTED
+IF(RTO_2.Q) THEN 
+LEVEL_FAIL := _IO_EM_DI_06;
+END_IF;
+IF SONAR_BLOCK_BOOL = TRUE THEN
+LASER_FAIL :=     _IO_EM_DI_07;
+ELSE
+LASER_FAIL := TRUE;
+END_IF;
+END_IF;
+
+
+// END STEP 50 ......................................................................
+
+//START STEP 60.........................................................................
+
+//STEP 60: SAMPLING STEP (DRAW SLURRY INTO SAMPLER UNTIL HIGH LEVEL OR TIMER RUN OUT)
+RTO_3(SEQ = 60 AND RUN AND NOT(RTO_4.Q) AND _IO_EM_DI_06, TIMER_RESET, Input_Delay) ;
+IF (RTO_3.Q ) THEN
+SEQ :=70;
+END_IF;
+
+//STEP 60: FAILED SAMPLING TRIGGER RETURN TO STEP 90 AND APPLY MINIMUM VSD CONDITIONS (RTO_4(SEQ =60 AND RUN AND NOT(RTO_3.Q), TIMER_RESET, MAX_SAMPLING_TIME) ;)
+RTO_4(RUN AND SEQ =60 AND NOT(RTO_3.Q), TIMER_RESET, MAX_SAMPLING_TIME) ;
+IF( RTO_4.Q OR NOT RUN) THEN
+SAMPLE_FAIL := RTO_4.Q;
+SEQ := 86;
+END_IF;
+
+// END STEP 60.....................................................................................
+
+
+//START STEP 70.............................................................
+
+
+//SETTLING TRIGGER/
+RTO_5(RUN AND SEQ = 70 AND _IO_EM_DI_07, TIMER_RESET, INPUT_HYSTERISIS_TIME) ;
+
+
+//STEP 70:LEVEL LOSS TRIGGER
+RTO_9(RUN AND SEQ= 70 AND LEVEL_LOSS_BOOL AND NOT _IO_EM_DI_06,TIMER_RESET, LEVEL_LOSS_TIMER);
+IF (RTO_9.Q OR NOT RUN) THEN
+LEVEL_LOSS := RTO_9.Q;
+SEQ := 86;
+END_IF;
+
+//STEP 70: CAPTURE SETTLING TIME AS SET_T
+RTO_6(RUN AND SEQ = 70 AND NOT(RTO_5.Q), TIMER_RESET, MAX_SET_TIME) ;
+SET_T := RTO_6.ET ;
+
+//STEP 70 OVERDOSE ABORT TRIGGER 
+
+RTO_10(RUN AND SEQ =70 AND VSD > VSD_ABORT_TRESHOLD AND OVERDOSE_ABORT_BOOL AND RTO_6.ET<ABORT_TIMER ,Timer_Reset,ABORT_TIMER+t#2S );
+IF RTO_10.Q THEN
+//STEP 70: ABORT RAPID SETTLING TO  STEP 80
+// HMI RAPID SETTLING STATUS INDICATOR TRIGGER
+ABORT_BOOL := RTO_10.Q;
+
+SEQ := 80;
+
+END_IF;
+
+//STEP 70: GATE KEEPER WAIT FOR SETTELING TO COMPLETE FOR OPENCV 
+RTO_7(RUN AND SEQ = 70, TIMER_RESET, MAX_SET_TIME) ;
+IF RTO_7.Q THEN
+SEQ :=80;
+END_IF;
+
+
+
+
+//END OF STEP 70..................................................................
+
+
+//STEP 80: CALCULATE VSD CORRECTIONS
+RTO_8(RUN AND SEQ = 80 , TIMER_RESET, CALCULATION_TIME) ;
+IF RTO_8.Q THEN
+SEQ :=85;
+END_IF ;
+
+
+//STEP 85: WRITE VSD UPDATE AND APPLY UPDATES FOR FOLLOWING SEQUENCE
+TON_6(RUN AND SEQ = 85, COR_TIME);
+IF TON_6.Q THEN
+SEQ := 90;
+END_IF ;
+
+// EXIT STEP 85
+
+
+
+// ENTER FAIL CONDITIONS:CHECK CONDITONS FAILED /SAMPLING FAILED/PURGE (NOTE NOT RTO_START.Q WILL ONLY ENEGISE AFTER A RISING EDGE TRIGGER)
+TON_8(SEQ = 86, COR_TIME);
+IF (TON_8.Q OR NOT RUN) THEN
+    VSD := FAILSAFE_VSD_VALUE;
+                VSD_Output := Failsafe_VSD_Value;
+    SEQ := 87;
+END_IF;
+// EXIT FAILURE MODE (NOTE NOT RTO_START.Q WILL ONLY ENEGISE AFTER A RISING EDGE TRIGGER)
+TON_9(SEQ = 87, COR_TIME);
+IF TON_9.Q THEN
+    VSD := FAILSAFE_VSD_VALUE;
+    VSD_Output := FAILSAFE_VSD_VALUE;
+SEQ := 90;
+END_IF;
+
+// EXIT FAILSAFE
+
+
+// STEP 90 WRITE CORRECTIONS FROM STEP 80/85 TO THE ANALOGUE CARD // IF UNIT IS OFFLINE WRITE FAIL SAFE TO VSD
+TON_7(SEQ = 90, SEQ_END) ;
+IF TON_7.Q THEN
+SEQ := 25;
+VSD_Output := VSD;
+//CLEAR FEEDBACK FAIL CONDITIONS TO HMI
+LEVEL_FAIL := FALSE;
+LASER_FAIL := TRUE;
+SAMPLE_FAIL:= FALSE;
+ABORT_BOOL := FALSE;
+LEVEL_LOSS := FALSE;
+
+
+END_IF ;
+
+//RESET ALL RTO TIMERS AND INITIATE TERMINAL PULSE 
+TP_1(TON_7.Q AND NOT(MAINT OR _IO_EM_DI_05), TERMINAL_PULSE) ;
+
+Seq_Pulse := TP_1.Q ;
+TIMER_RESET := TP_1.Q ;
+
+
+// RETURN TO STEP 25
+
+ST_Valves
+Local Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+TON_STEP87_INHIBIT		TON		...	...		Var	False	
+
+Programs
+//MAINTENANCE/OFFLINE/INITIATION/INSEQUENCE_DELAY/EVALUATION/TERMINAL
+
+IF ((RUN AND (SEQ = 0 OR SEQ = 10 OR SEQ =25 OR SEQ = 40 OR SEQ = 50)) OR SEQ = 90 ) THEN
+_IO_EM_DO_01 := FALSE;
+_IO_EM_DO_02 := FALSE;
+_IO_EM_DO_03 := FALSE;
+_IO_EM_DO_04 := FALSE;
+END_IF;
+
+
+// INTERLOCK INHIBIT POWERCYCLE ON PLC COIL ENDERISING STEP 86 AND 87
+
+TON_STEP87_INHIBIT(_IO_EM_DI_04 OR NOT _IO_EM_DI_04 , T#5s) ;
+
+IF TON_STEP87_INHIBIT.Q THEN
+STEP87_INTERLOCK := TRUE;
+
+END_IF;
+
+//END INHIBIT
+
+
+//RINSE//POST_RINSE//FAILSAFE_RINSE
+IF ((RUN AND SEQ = 20) XOR (RUN AND SEQ =85) XOR( STEP87_INTERLOCK AND SEQ = 87)) THEN
+_IO_EM_DO_01 := TRUE;
+_IO_EM_DO_02 := TRUE;
+_IO_EM_DO_03 := FALSE;
+_IO_EM_DO_04 := FALSE;
+END_IF;
+
+//PURGE//DUMP_SAMPLE//FAILSAFE_DUMP
+IF((RUN AND SEQ = 30 ) XOR (RUN AND SEQ =80) XOR (STEP87_INTERLOCK AND SEQ = 86)) THEN
+_IO_EM_DO_01 := FALSE;
+_IO_EM_DO_02 := TRUE;
+_IO_EM_DO_03 := FALSE;
+_IO_EM_DO_04 := FALSE;
+END_IF;
+
+//SAMPLE
+IF (RUN AND SEQ = 60) THEN
+_IO_EM_DO_01 := FALSE;
+_IO_EM_DO_02 := FALSE;
+_IO_EM_DO_03 := TRUE;
+_IO_EM_DO_04 := FALSE;
+END_IF;
+
+//SETTLE
+IF (RUN AND SEQ = 70) THEN
+_IO_EM_DO_01 := FALSE;
+_IO_EM_DO_02 := FALSE;
+_IO_EM_DO_03 := FALSE;
+_IO_EM_DO_04 := TRUE;
+END_IF;
+
+
+
+Calculations_S8_S85
+Local Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+Calc_Trig	Calc_Tr	BOOL		TRUE			Var	False	
+AVERAGE_Set_T		AVERAGE		...	...		Var	False	
+
+Programs
+//MAX SETTLING TIME IS DEPENDANT ON SETTLING TIME CONSTANT PLUS 20 SECONDS	  Set_T_REAL := (ANY_TO_REAL(Set_T)/1000.000);
+Max_Set_Time := Set_T_Const_TIME + t#40s;
+
+// OVERWRITE CONFLICS ENTRIES FROM HMI
+//OVERWRITE HMI CONFLICTS FOR START_VALUE
+IF VSD_Start_Constant< VSD_MIN THEN
+VSD_Start_Constant := VSD_MIN;
+END_IF;
+IF VSD_Start_Constant> VSD_MAX THEN
+VSD_Start_Constant := VSD_MAX;
+//OVERWRITE HMI CONFLICTS FOR FAILSAFE VALVE
+END_IF;
+IF FAILSAFE_VSD_VALUE< VSD_MIN THEN
+FAILSAFE_VSD_VALUE := VSD_MIN;
+END_IF;
+IF FAILSAFE_VSD_VALUE> VSD_MAX THEN
+FAILSAFE_VSD_VALUE := VSD_MAX;
+END_IF;
+
+//OVERWRITE HMI VSD_MAX AND VSD_MIN
+IF VSD_MIN >= VSD_MAX THEN
+VSD_MAX := 100.0;
+VSD_MIN := 30.0;
+END_IF;
+
+
+// OVERWRITE HMI CONFLIC FOR ABORT VSD LEVEL LOSS THRESHOLD
+
+IF VSD_ABORT_TRESHOLD < VSD_MIN THEN
+VSD_ABORT_TRESHOLD := VSD_MIN;
+END_IF;
+IF VSD_ABORT_TRESHOLD > VSD_MAX THEN
+VSD_ABORT_TRESHOLD := VSD_MAX;
+END_IF;
+
+// OVERWRITE HMI CONFLIC FOR LEVEL LOSS THRESHOLD TIME
+IF LEVEL_LOSS_TIMER > Set_T_Const_TIME THEN
+LEVEL_LOSS_TIMER := Set_T_Const_TIME - T#5s;
+END_IF;
+IF LEVEL_LOSS_TIMER < T#5s THEN
+LEVEL_LOSS_TIMER :=T#5s;
+END_IF;
+
+// OVERWRITE HMI CONFLIC FOR ABORT THRESHOLD TIMER
+IF ABORT_TIMER > Set_T_Const_TIME THEN
+ABORT_TIMER := T#10s;
+END_IF;
+
+// END OVERWRITE CONFLICTS ON HMI
+
+
+//STEP 80: CONVERT TIME VARIABLES TO REAL AND CALCULATE THE DEVIATION
+
+CASE SEQ OF
+    80:
+	
+	 // EXECUTE CODE INSTRUCTION ONCE WHEN  SEQ = 80 
+        IF NOT Calc_Trig1 THEN	
+		
+	//SUBTRACT HYSTERRIS TIME TO MEASURED SETTLING TIME 
+      Set_T := Set_T - INPUT_HYSTERISIS_TIME;
+	
+	  //CONVERT MEASURED SETTLING TIME TO REAL
+	  Set_T_REAL := (ANY_TO_REAL(Set_T))/1000.000;
+	
+	  Sett_T_Const_REAL := (ANY_TO_REAL(Set_T_Const_TIME))/1000.0000;
+		  
+	         // CALCULATE THE DEVIATION FROM SETPOINT    
+         DEV := (Set_T_REAL / Sett_T_Const_REAL)-1.000;
+
+
+       // CALCULATE THE DEVIATION CHANGE RATE
+        ROC := DEV - Prev_DEV;
+
+        // CALCULATE RATE OF ACCELERATION AS THE SECOND ORDER RATE CHANGE IN DEVIATION
+        ACCELERATION := ROC - ROC_Prev;
+
+        // WRITE SUM OF WEIGHTED TERMS
+        SUM := (PROP_WEIGHT * DEV + SPEED_WEIGHT * ROC + ACCELERATION_WEIGHT * ACCELERATION - DRIFT_BIAS);
+
+        // EXPONENT FILTER (HYPERBOLIC ACTIVATION FUNCTIONS SATURATE AT APROXIMATELY 4 AND -4)
+        IF SUM > 4.0000 THEN
+            SUM := 4.000;
+        ELSIF SUM < -4.0000 THEN
+            SUM := -4.0000;
+         END_IF;
+		 
+		
+            // CALCULATE THE HYPERBOLIC TANH
+			TANH_SUM :=((POW(e, 2.0 * SUM) - 1.0) / (POW(e, 2.0 * SUM) + 1.0)) ;
+			// CALCULATE THE HYPERBOLIC SECH 
+            SECH_SUM := 2.0000/(POW(e, SUM)+ POW(e, -SUM));
+			// WRITE 2ND ORDER DERIVITIVE OF TANH(SUM) EXPRESSED AS -SECH(SUM)X TANH(SUM)
+			
+			SECOND_DERIV_TANH := -( TANH_SUM * SECH_SUM);
+			
+			//CALCULATE THE BIASED(RAMP_DOWN) VSD_CORRECTION WHEN SUM < 0
+			IF SUM < 0.0000 THEN
+			
+			Correction := BIAS * VSD_WEIGHT * ( TANH_SUM + SECOND_DERIV_TANH);
+			
+			//CALCULATE THE UNBIASED(RAMP_UP) VSD_CORRECTION WHEN SUM >= 0
+			
+		ELSIF SUM >= 0.0000 THEN
+            
+			Correction := VSD_WEIGHT * (TANH_SUM + SECOND_DERIV_TANH);
+		
+         END_IF;
+		 
+
+		
+             // HALT THE CODE BY SETTING THE TRIGGER  TO TRUE
+	
+            Calc_Trig1 := TRUE; 
+        END_IF;
+    ELSE
+        // RESET THE TRIGGER TO FALSE FOR THE NEXT CYCLE
+        Calc_Trig1 := FALSE;
+END_CASE;
+	
+	
+	
+    // STEP 85 APPLY VSD CORRECTIONS
+
+
+CASE SEQ OF
+    85:
+          // EXECUTE VSD CONTROL INSTRUCTION ONCE WHEN  SEQ = 85 
+        IF NOT Calc_Trig THEN
+            VSD := VSD + Correction;
+
+            // LIMIT VSD TO MAX VALUE
+            IF VSD > VSD_MAX THEN
+                VSD := VSD_MAX;
+                // LIMIT VSD TO BE MORE THAN THE VSD MINIMUM
+              
+            ELSIF VSD < VSD_MIN THEN
+                VSD := VSD_MIN;
+			
+			ELSIF( VSD>= VSD_MIN AND VSD <= VSD_MAX )THEN
+			
+			VSD:= VSD;
+
+            END_IF;
+			END_IF;
+			
+			// WRITE THE DEVIATION CHANGE RATE OF THE CURRENT CYCLE TO THE NEXT CYCLE:
+            ROC_Prev := ROC;
+            // WRITE DEVIATION OF THE CURRENT CYCLE AS PREV_DEV:
+            Prev_DEV := DEV;
+									
+            //HALT THE SCRIPT WHEN THE TRIGGER IS SET TO TRUE
+            Calc_Trig := TRUE; 
+        
+    ELSE
+        // RESET TRIGGER WHEN SEQUENCE MOVE TO STEP 90
+        Calc_Trig := FALSE;
+END_CASE;
+
+
+
+
+
+
+ANALOGUE_ST
+Local Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+SCALER_1		SCALER		...	...		Var	False	
+SCALER_2		SCALER		...	...		Var	False	
+
+Programs
+//CALL SCALER FUNCTION FOR VSD OUTPUT
+SCALER_1(VSD_OUTPUT, SCALE_MIN, SCALE_MAX, 13107.0, OUT_MAXIMA) ;
+
+//CONVERT VSD OUTPUT FROM REAL TO UINT AND WRITE THE VSD TO ANALOGUE CARD ADDRESS
+_IO_P1_AO_00 := ANY_TO_UINT(SCALER_1.Output) ;
+
+//CALL SCALER FUNCTION FOR SETTLING TIME OUTPUT (MAX_SET_IN_REAL)
+SCALER_2(Set_T_REAL, 0.0, 60.0, 13107.0, OUT_MAXIMA) ;
+
+//CONVERT SETTLING TIME FROM REAL TO UINT AND WRITE SETTLING TIME TO ANALOGUE CARD ADDRESS
+IF (SEQ = 85 AND RUN) THEN
+_IO_P1_AO_01 := ANY_TO_UINT(SCALER_2.Output) ;
+END_IF;
+
+
+
+VIEW
+Local Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+AVERAGE_1		AVERAGE		...	...		Var	False	
+
+Rung1 Diagram
+ 
+Rung2 Diagram
+ 
+Rung3 Diagram
+ 
+HMI_INPUTS
+Programs
+//ACTIVATE MANUAL VALVE OPERATIONS
+
+IF (NOT RUN AND ( MAINT OR _IO_EM_DI_05  )) THEN
+SEQ := 100;
+END_IF;
+
+IF (NOT MAINT AND NOT _IO_EM_DI_05 AND SEQ = 100) THEN
+SEQ := 86;
+END_IF;
+
+IF  SEQ = 100 THEN
+
+
+//RINSE VALVE MANUAL HMI TEST
+IF (NOT RUN AND SEQ = 100 AND HMI_RINSE)  THEN
+_IO_EM_DO_01 := TRUE;
+END_IF;
+IF (NOT RUN AND SEQ =100 AND NOT HMI_RINSE) THEN
+_IO_EM_DO_01 := FALSE;
+END_IF;
+
+//PURGE VALVE MANUAL HMI TEST
+
+IF (NOT RUN AND SEQ = 100 AND HMI_PURGE)  THEN
+_IO_EM_DO_02 := TRUE;
+END_IF;
+//CLOSE PURGE VALVE
+IF (NOT RUN AND SEQ = 100 AND NOT HMI_PURGE) THEN
+_IO_EM_DO_02 := FALSE;
+END_IF;
+
+
+//VACUUM VALVE MANUAL HMI TEST
+IF (NOT RUN AND SEQ = 100 AND HMI_VACUUM)  THEN
+_IO_EM_DO_03 := TRUE;
+END_IF;
+//CLOSE VACUUM VALVE 
+IF (NOT RUN AND SEQ =100 AND NOT HMI_VACUUM)THEN
+_IO_EM_DO_03 := FALSE;
+END_IF;
+
+
+//PINCH VALVE MANUAL HMI TEST
+IF (NOT RUN AND SEQ = 100 AND HMI_PINCH)  THEN
+_IO_EM_DO_04 := TRUE;
+END_IF;
+//CLOSE PINCH VALVE 
+IF (NOT RUN AND SEQ = 100 AND NOT HMI_PINCH) THEN
+_IO_EM_DO_04 := FALSE;
+
+
+
+END_IF;
+END_IF;
+
+
+
+IF (FORCED_RUN) THEN
+MAINT :=FALSE;
+END_IF;
+
+
+
+//HMI STATUS INDICATIOR (ONLINE/FORCE ONLINE/MAINT IO/ MAINT HMI
+// STATUS :ONLINE
+IF (_IO_EM_DI_04 AND NOT FORCED_RUN AND NOT MAINT AND NOT _IO_EM_DI_05) THEN
+HMI_STATUS_INT := 10;
+END_IF;
+//STATUS: OFFLINE
+
+IF (NOT _IO_EM_DI_04 AND NOT FORCED_RUN AND NOT MAINT AND NOT _IO_EM_DI_05)THEN
+HMI_STATUS_INT := 20;
+END_IF;
+
+// STATUS: FORCED RUN VIA HMI 
+IF (FORCED_RUN AND NOT MAINT AND NOT _IO_EM_DI_05)THEN
+HMI_STATUS_INT := 30;
+END_IF;
+
+// STATUS: MAINTENANCE VIA HMI 
+IF ( NOT FORCED_RUN AND  MAINT AND NOT _IO_EM_DI_05) THEN
+HMI_STATUS_INT :=40;
+END_IF;
+
+//STATUS: MAINTENANCE VIA PLC INPUT 
+
+IF (NOT FORCED_RUN AND NOT MAINT AND _IO_EM_DI_05)THEN
+HMI_STATUS_INT := 50;
+END_IF;
+
+//STATUS: MAINTENANCE BY BOTH INPUT AND HMI
+IF ( MAINT AND _IO_EM_DI_05)THEN
+HMI_STATUS_INT := 60;
+END_IF;
+
+//END OF STATUS INDICATOR
+
+
+COUNTERS_TIMERS
+Local Variables
+Name	Alias	Data Type	Dimension	Initial Value	Project Value	Comment	Direction	Retained	String Size
+CTU_1		CTU		...	...		Var		
+CTU_2		CTU		...	...		Var		
+CTU_3		CTU		...	...		Var		
+CTU_4		CTU		...	...		Var		
+CTU_5		CTU		...	...		Var	False	
+CTU_6		CTU		...	...		Var	False	
+CTU_7		CTU		...	...		Var	False	
+CTU_8		CTU		...	...		Var	False	
+RTO_1		RTO		...	...		Var		
+MAX_TIME_RESET		TIME		T#3599s	T#59S		Var	False	
+RTO_2		RTO		...	...		Var		
+RTO_3		RTO		...	...		Var		
+RTO_4		RTO		...	...		Var		
+MAX_TIME_ACCUMULATOR_RESET_DINT		DINT		10	10		Var	False	
+
+Programs
+//COUNT VALVE OPERATIONS
+
+CTU_1(_IO_EM_DO_01, RESET_VALVE1_CYCLE_COUNT OR RESET_ALL_CTU, MAX_COUNT_DINT);
+CTU_2(_IO_EM_DO_02, RESET_VALVE2_CYCLE_COUNT OR RESET_ALL_CTU, MAX_COUNT_DINT);
+CTU_3(_IO_EM_DO_03, RESET_VALVE3_CYCLE_COUNT OR RESET_ALL_CTU, MAX_COUNT_DINT);
+CTU_4(_IO_EM_DO_04, RESET_VALVE4_CYCLE_COUNT OR RESET_ALL_CTU, MAX_COUNT_DINT);
+
+//WRITE COUNTERS TO HMI
+FLUSH_COUNT := CTU_1.CV; 
+PURGE_COUNT := CTU_2.CV;
+SAMPLE_COUNT :=CTU_3.CV;
+PINCH_COUNT := CTU_4.CV;
+
+// COUNT UP VALVE ON TIME
+
+RTO_1(_IO_EM_DO_01,RESET_VALVE1_CYCLE_COUNT OR FLUSH_COUNT = MAX_COUNT_DINT OR RESET_ALL_CTU OR RTO_1.ET >= MAX_TIME_RESET, MAX_TIME_RESET);
+RTO_2(_IO_EM_DO_02,RESET_VALVE2_CYCLE_COUNT OR PURGE_COUNT = MAX_COUNT_DINT OR RESET_ALL_CTU OR RTO_2.ET >= MAX_TIME_RESET, MAX_TIME_RESET);
+RTO_3(_IO_EM_DO_03,RESET_VALVE3_CYCLE_COUNT OR SAMPLE_COUNT= MAX_COUNT_DINT OR RESET_ALL_CTU OR RTO_3.ET >= MAX_TIME_RESET, MAX_TIME_RESET);
+RTO_4(_IO_EM_DO_04,RESET_VALVE4_CYCLE_COUNT OR PINCH_COUNT = MAX_COUNT_DINT OR RESET_ALL_CTU OR RTO_4.ET >= MAX_TIME_RESET, MAX_TIME_RESET);
+
+CTU_5(RTO_1.ET = MAX_TIME_RESET, RESET_VALVE1_CYCLE_COUNT OR RESET_ALL_CTU, MAX_TIME_ACCUMULATOR_RESET_DINT);
+CTU_6(RTO_2.ET = MAX_TIME_RESET, RESET_VALVE2_CYCLE_COUNT OR RESET_ALL_CTU, MAX_TIME_ACCUMULATOR_RESET_DINT);
+CTU_7(RTO_3.ET = MAX_TIME_RESET, RESET_VALVE3_CYCLE_COUNT OR RESET_ALL_CTU, MAX_TIME_ACCUMULATOR_RESET_DINT);
+CTU_8(RTO_4.ET = MAX_TIME_RESET, RESET_VALVE4_CYCLE_COUNT OR RESET_ALL_CTU, MAX_TIME_ACCUMULATOR_RESET_DINT);
+//
+//
+
+//WRITE TIME COUNT TO HMI
+FLUSH_TIME_DINT :=CTU_5.CV;
+PURGE_TIME_DINT :=CTU_6.CV;
+SAMPLE_TIME_DINT:=CTU_7.CV;
+PINCH_TIME_DINT :=CTU_8.CV;
+
+
+
+
+
+
+//INPUT COUNT-UP OF TRUE STATES
+
+
